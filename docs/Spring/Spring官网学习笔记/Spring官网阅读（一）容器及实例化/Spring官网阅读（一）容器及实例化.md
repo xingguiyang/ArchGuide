@@ -31,7 +31,7 @@ Spring官网阅读（一）
 
 我们直接看官网上的一张图片，如下：
 
-![容器工作](image\容器工作.jpg)
+![容器工作](image/容器工作.jpg)
 
 **Spring容器通过我们提交的pojo类以及配置元数据产生一个充分配置的可以使用的系统**
 
@@ -43,7 +43,7 @@ Spring官网阅读（一）
 
 从官网上来看，主要有以下三种方法
 
-![官网实例化](image\官网实例化.jpg)
+![官网实例化](image/官网实例化.jpg)
 
 1. 构造方法
 2. 通过静态工厂方法
@@ -62,11 +62,11 @@ MyServiceImpl luBan = (MyServiceImpl) cc.getBean("myServiceImpl");
 
 直接main方法运行，然后在`org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBeanInstance`这个方法的入口打一个断点，如图：
 
-![断点](image\断点.jpg)
+![断点](image/断点.jpg)
 
 
 
-![断点](image\debug条件.jpg)
+![断点](image/debug条件.jpg)
 
 接下来我们对这个方法进行分析，代码如下：
 
@@ -134,7 +134,7 @@ protected BeanWrapper createBeanInstance(String beanName, RootBeanDefinition mbd
 
 1. 通过`BeanDefinition`中的`instanceSupplier`直接获取一个实例化的对象。这个`instanceSupplier`属性我本身不是特别理解，在xml中的<bean>标签以及注解的方式都没有找到方式配置这个属性。后来在`org.springframework.context.support.GenericApplicationContext`这个类中找到了以下两个方法
 
-![](image\supplier.png)
+![](image/supplier.png)
 
 
 
@@ -152,7 +152,7 @@ public static void main(String[] args) {
 
 可以发现进入了这个方法进行实例化
 
-![](image\debug001.png)
+![](image/debug001.png)
 
 这个方法一般不常用，平常我们也使用不到，就不做过多探究，笔者认为，这应该是Spring提供的一种方便外部扩展的手段，让开发者能够更加灵活的实例化一个bean。
 
@@ -179,7 +179,7 @@ public class Service {
 
 观察debug:
 
-![](image\debug112901.jpg)
+![](image/debug112901.jpg)
 
 可以发现，代码执行到最后一行，同时我们看代码上面的注释可以知道，当没有进行特殊的处理的时候，默认会使用无参构造函数进行对象的实例化
 
@@ -200,7 +200,7 @@ public class Main {
 }
 ```
 
-![](image\debug112902.jpg)
+![](image/debug112902.jpg)
 
 同样，断点也进入最后一行
 
@@ -229,7 +229,7 @@ public class Main {
 
 断点结果：
 
-![](image\debug112903.jpg)
+![](image/debug112903.jpg)
 
 可以发现，通过`@Bean`方法创建对象时，Spring底层是通过`factoryMethod`的方法进行实例化对象的。Spring会在我们需要实例化的这个对象对应的`BeanDefinition`中记录`factoryBeanName`是什么（在上面的例子中factoryBeanName就是config）,同时会记录这个factoryBean中创建对象的`factoryMethodName`是什么，最后通过`factoryBeanName`获取一个Bean然后反射调用`factoryMethod`实例化一个对象。
 
@@ -277,7 +277,7 @@ public static void main(String[] args) {
 
 断点如下：
 
-![](image\debug112903.jpg)
+![](image/debug112903.jpg)
 
 可以发现，这种情况也进入了`instantiateUsingFactoryMethod`方法中。通过静态工厂方法这种方式特殊之处在于，包含这个静态方法的类，不需要实例化，不需要被Spring管理。Spring的调用逻辑大概是：
 
@@ -301,7 +301,7 @@ public static void main(String[] args) {
 
 断点如下：
 
-![](image\debug112903.jpg)
+![](image/debug112903.jpg)
 
 还是执行的这个方法。这个方法的执行过程我断点跟踪了以后，发现跟`@Bean`方式执行的流程是一样的。这里也不再赘述了。
 
@@ -326,9 +326,9 @@ public static void main(String[] args) {
 
    Spring通过解析我们的配置元数据，以及我们提供的类对象得到一个Beanfinition对象。通过这个对象可以实例化出一个java bean对象。主要流程如图：
 
-![Spring官网（1）-Instantiating Beans](image\Spring官网（1）-Instantiating Beans.png)
+![Spring官网（1）-Instantiating Beans](image/Spring官网（1）-Instantiating Beans.png)
 
-这篇文章到这里就结束了，主要学习了Spring官网中的1.2，1.3两小节。下篇文章，我们开始学习1.4中的知识。主要涉及到依赖注入的一些内容，也是我们Spring中非常重要的一块内容哦！下篇文章再见！![24](image\24.png)
+这篇文章到这里就结束了，主要学习了Spring官网中的1.2，1.3两小节。下篇文章，我们开始学习1.4中的知识。主要涉及到依赖注入的一些内容，也是我们Spring中非常重要的一块内容哦！下篇文章再见！![24](image/24.png)
 
 
 

@@ -16,7 +16,7 @@ Spring官网阅读（二）（依赖注入及方法注入）
 
    ​				官网：
 
-![2019113001](image\2019113001.jpg)
+![2019113001](image/2019113001.jpg)
 
 我们分别对以上两种方式进行测试，官网上用的是XML的方式，我这边就采用注解的方式了：
 
@@ -126,7 +126,7 @@ com.dmz.official.service.LuBanService@1b40d5f0
    - 首先我们明确一点，直接添加`@Autowired`注解到字段上，不需要提供setter方法也能完成注入。以上面的例子来说，Spring会通过反射获取到Service中luBanService这个字段，然后通过反射包的方法，Filed.set(Service,luBanService)这种方式来完成注入
    - 我们将`@Autowired`添加到setter方法时，我们可以通过断点看一下方法的调用栈，如下：
 
-   ![2019113001](image\2019113002.jpg)
+   ![2019113001](image/2019113002.jpg)
 
    对于这种方式来说，最终是通过Method.invoke(object,args)的方式来完成注入的，这里的method对象就是我们的setter方法
 
@@ -200,7 +200,7 @@ com.dmz.official.service.LuBanService@1b40d5f0
 
 ###### 区别：
 
-![2019113001](image\2019113003.jpg)
+![2019113001](image/2019113003.jpg)
 
 根据上图中官网所说，我们可以得出如下结论：
 
@@ -214,7 +214,7 @@ com.dmz.official.service.LuBanService@1b40d5f0
 
 我们不完全按照官网顺序进行学习，先看这一小节，对应官网上的位置如下图：
 
-![2019113001](image\2019113004.jpg)
+![2019113001](image/2019113004.jpg)
 
 ######  <span id="jump">为什么需要方法注入</span>：
 
@@ -417,7 +417,7 @@ public class MyReplacer implements MethodReplacer {
 
 - 我们首先要明确一点，什么是依赖（Dependencies）？来看官网中的一段话：
 
-![2019120101](image\2019120101.jpg)
+![2019120101](image/2019120101.jpg)
 
 可以说，一个对象的依赖就是它自身的属性，Spring中的**依赖注入就是属性注入**。
 
@@ -429,7 +429,7 @@ public class MyReplacer implements MethodReplacer {
 
 画图如下：
 
-![2019120101](image\2019120102.jpg)
+![2019120101](image/2019120102.jpg)
 
 
 
