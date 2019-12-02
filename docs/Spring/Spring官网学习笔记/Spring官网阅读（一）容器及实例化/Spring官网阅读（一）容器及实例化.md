@@ -326,7 +326,7 @@ public static void main(String[] args) {
 
    Spring通过解析我们的配置元数据，以及我们提供的类对象得到一个Beanfinition对象。通过这个对象可以实例化出一个java bean对象。主要流程如图：
 
-![Spring官网（1）-Instantiating Beans](image/Spring官网（1）-Instantiating Beans.png)
+![](image/debug112906.jpg)
 
 这篇文章到这里就结束了，主要学习了Spring官网中的1.2，1.3两小节。下篇文章，我们开始学习1.4中的知识。主要涉及到依赖注入的一些内容，也是我们Spring中非常重要的一块内容哦！下篇文章再见！![24](image/24.png)
 
