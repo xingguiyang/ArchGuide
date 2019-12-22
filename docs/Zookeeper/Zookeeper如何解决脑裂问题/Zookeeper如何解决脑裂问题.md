@@ -12,10 +12,10 @@
 
 ## Zookeeper集群中的脑裂场景
 对于一个集群，想要提高这个集群的可用性，通常会采用多机房部署，比如现在有一个由6台zkServer所组成的一个集群，部署在了两个机房：
-![image.png](http://cdn.nlark.com/yuque/0/2019/png/365147/1563867147007-e5000b66-fbe7-4958-89c7-11800de04f7c.png#align=left&display=inline&height=374&name=image.png&originHeight=748&originWidth=1460&size=43521&status=done&width=730)
+![](image/zk1.png)
 
 正常情况下，此集群只会有一个Leader，那么如果机房之间的网络断了之后，两个机房内的zkServer还是可以相互通信的，如果**不考虑过半机制**，那么就会出现每个机房内部都将选出一个Leader。
-![image.png](http://cdn.nlark.com/yuque/0/2019/png/365147/1563867309583-b3c9d494-d91e-41f0-bb1f-310354cc14c4.png#align=left&display=inline&height=384&name=image.png&originHeight=768&originWidth=1460&size=42332&status=done&width=730)
+![](image/zk2.png)
 
 这就相当于原本一个集群，被分成了两个集群，出现了两个“大脑”，这就是脑裂。
 
@@ -65,14 +65,14 @@ return (set.size() > half);
 那么再来想一个问题，**过半机制中为什么是大于，而不是大于等于呢？**
 
 这就是更脑裂问题有关系了，比如回到上文出现脑裂问题的场景：
-![image.png](http://cdn.nlark.com/yuque/0/2019/png/365147/1563868159921-23d50d01-ec38-45e3-bb93-76f4bb27f896.png#align=left&display=inline&height=374&name=image.png&originHeight=748&originWidth=1460&size=43521&status=done&width=730)
+![](image/zk3.png)
 
 当机房中间的网络断掉之后，机房1内的三台服务器会进行领导者选举，但是此时过半机制的条件是set.size() > 3，也就是说至少要4台zkServer才能选出来一个Leader，所以对于机房1来说它不能选出一个Leader，同样机房2也不能选出一个Leader，这种情况下整个集群当机房间的网络断掉后，整个集群将没有Leader。
 
 而如果过半机制的条件是set.size() >= 3，那么机房1和机房2都会选出一个Leader，这样就出现了脑裂。所以我们就知道了，为什么过半机制中是**大于**，而不是**大于等于**。就是为了防止脑裂。
 
 如果假设我们现在只有5台机器，也部署在两个机房：
-![image.png](http://cdn.nlark.com/yuque/0/2019/png/365147/1563865876119-268f52aa-3fce-4337-ab5a-ed0e19fb388c.png#align=left&display=inline&height=378&name=image.png&originHeight=756&originWidth=1476&size=44489&status=done&width=738)
+![](image/zk4.png)
 
 此时过半机制的条件是set.size() > 2，也就是至少要3台服务器才能选出一个Leader，此时机房件的网络断开了，对于机房1来说是没有影响的，Leader依然还是Leader，对于机房2来说是选不出来Leader的，此时整个集群中只有一个Leader。
 

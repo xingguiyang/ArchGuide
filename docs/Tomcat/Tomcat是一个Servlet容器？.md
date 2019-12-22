@@ -36,7 +36,6 @@ class Tomcat {
 
 所以，通常Servlet是属于一个应用程序（项目）的，换句话说，我们的一个应用包含多个Servlet，所以这是**第二层Servlet容器--应用，也就是Tomcat中的Context（应用上下文）**。那么第一层Servlet容器呢？
 
-<a name="503N9"></a>
 ## Wrapper
 Wrapper就是第一层Servlet容器，Wrapper表示Servlet的包装者，所以它是最接近Servlet的，那么为什么需要Wrapper呢？
 
