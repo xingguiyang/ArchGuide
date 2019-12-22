@@ -3,13 +3,11 @@
 
 最近在了解**边缘计算**，发现我们经常听说的CDN也是边缘计算里的一部分。那么说到CDN，好像只知道它中文叫做**内容分发网络**。那么具体CDN的原理是什么？能够为用户在浏览网站时带来什么好处呢？解决这两个问题是本文的目的。
 
-<a name="cJkJs"></a>
 ## CDN概念
 CDN全称叫做“Content Delivery Network”，中文叫**内容分发网络**。
 
 实际上CDN这个概念是在1996年由美国麻省理工学院的一个研究小组为**改善互联网的服务质量**而提出的。那么它到底是怎么改善互联网服务质量的呢？
 
-<a name="TWgrK"></a>
 ## 原理分析
 我们知道，当我们使用域名访问某一个网站时，实际上就是将请求包（以Http请求为例）通过网络传输给某台服务器，比如访问“www.baidu.com”时：
 
@@ -43,10 +41,10 @@ CDN全称叫做“Content Delivery Network”，中文叫**内容分发网络**�
 实际上DNS系统是非常庞大的，这里不去多将，大家把它当作一个黑盒子，这个盒子的作用就是上文所描述的，这里用一个简单的图来表示一下。
 
 没有CNAME的情况：
-![image.png](https://cdn.nlark.com/yuque/0/2019/png/365147/1563261172481-e1cab16e-557b-4b4d-8e7c-ce1c9f17dbf4.png#align=left&display=inline&height=237&name=image.png&originHeight=474&originWidth=1004&size=41808&status=done&width=502)
+![](image/1.png)
 
 有CNAME的情况：
-![image.png](https://cdn.nlark.com/yuque/0/2019/png/365147/1563261182855-c2ebf535-95ca-4449-a349-d6a3219b1269.png#align=left&display=inline&height=234&name=image.png&originHeight=468&originWidth=1012&size=46488&status=done&width=506)
+![](image/2.png)
 
 **特别注意：在有CNAME的情况下，我们可以发现，CNAME实际上在域名解析的过程中承担了中间人（或者说代理）的角色，这是CDN实现的关键。**
 
@@ -97,9 +95,8 @@ CDN全称叫做“Content Delivery Network”，中文叫**内容分发网络**�
 
 用户使用某个域名来访问静态资源时（这个域名在阿里CDN服务中叫做“加速域名”），比如这个域名为“image.baidu.com”，它对应一个CNAME，叫做“cdn.ali.com”，那么普通DNS服务器（区别**CDN专用DNS服务器**）在解析“image.baidu.com”时，会先解析成“cdn.ali.com”，普通DNS服务器发现该域名对应的也是一个DNS服务器，那么会将域名解析工作转交给该DNS服务器，该DNS服务器就是**CDN专用DNS服务器。CDN专用DNS服务器**对“cdn.ali.com”进行解析，然后依据服务器上记录的所有CDN服务器地址信息，选出一个离用户最近的一个CDN服务器地址，并返回给用户，用户即可访问离自己最近的一台CDN服务器了。
 
-![image.png](https://cdn.nlark.com/yuque/0/2019/png/365147/1563264505665-17f3ed26-48bf-47ee-ad22-42a838f04d1a.png#align=left&display=inline&height=360&name=image.png&originHeight=720&originWidth=1090&size=68194&status=done&width=545)
+![](image/3.png)
 
-<a name="WGEKX"></a>
 ## 补充：
 在对域名解析时有多种类型的记录，最常用的比如：
 
@@ -107,13 +104,7 @@ CDN全称叫做“Content Delivery Network”，中文叫**内容分发网络**�
 - CNAME：一个域名对应另外一个域名
 - NS：将子域名指定其他DNS服务器解析
 
-![DNS解析记录类型.png](https://cdn.nlark.com/yuque/0/2019/png/365147/1563515100097-56e26a37-7d8b-4cb9-a215-10d840243e4f.png#align=left&display=inline&height=478&name=DNS%E8%A7%A3%E6%9E%90%E8%AE%B0%E5%BD%95%E7%B1%BB%E5%9E%8B.png&originHeight=478&originWidth=663&size=35333&status=done&width=663)
+![](image/4.png)
 
-<a name="u43UY"></a>
 ## 总结
 通过上面的文章我们可以发现，CDN的实现原理依赖于DNS，因为本人不是专门搞网络的，所以文中如果有不准确的地方，还请各位大佬指出。
-
-**重点**
-****有痛点才有创新，一个技术肯定都是为了解决某个痛点才出现的。**
-请帮忙转发一下，如果想第一时间学习更多的精彩的内容，请关注微信公众号：**1点25**
-![reny125.jpeg](https://cdn.nlark.com/yuque/0/2019/jpeg/365147/1563264678901-ce9bcd93-a95a-45e4-8075-74ff66d0e515.jpeg#align=left&display=inline&height=492&name=reny125.jpeg&originHeight=1164&originWidth=1005&size=194236&status=done&width=425)
