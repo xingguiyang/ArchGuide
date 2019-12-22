@@ -34,7 +34,7 @@ Github仓库地址为 https://github.com/boomblog/ArchGuide
 #### [Tomcat是一个Servlet容器？](docs/Tomcat/Tomcat是一个Servlet容器？.md)
 ### 数据库
 ### 分布式
-#### [分布式ID方案总结](docs/分布式/分布式ID方案总结.md)
+#### [分布式ID方案总结](docs/分布式/分布式ID方案总结/分布式ID方案总结.md)
 #### Zookeeper
 ##### [Zookeeper如何解决脑裂问题](docs/Zookeeper/Zookeeper如何解决脑裂问题.md)
 ### 架构杂文
