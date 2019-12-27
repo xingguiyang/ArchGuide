@@ -30,6 +30,7 @@ Github仓库地址为 https://github.com/boomblog/ArchGuide
 ##### [（三）自动注入与精确注入](docs/Spring/Spring官网学习笔记/Spring官网阅读（三）自动注入与精确注入/Spring官网阅读（三）自动注入与精确注入.md) 
 ##### [（四）BeanDefinition（上）](docs/Spring/Spring官网学习笔记/Spring官网阅读（四）BeanDefinition（上）/Spring官网阅读（四）BeanDefinition.md) 
 ##### [（五）BeanDefinition（下）](docs/Spring/Spring官网学习笔记/Spring官网阅读（五）BeanDefinition（下）/Spring官网阅读（五）BeanDefinition合并.md) 
+##### [（六）容器的扩展点（BeanFactoryPostProcessor）](docs/Spring/Spring官网学习笔记/Spring官网阅读（六）容器的扩展点（BeanFactoryPostProcessor）/Spring官网阅读（六）容器的扩展点（BeanFactoryPostProcessor）.md) 
 ### Tomcat
 #### [Tomcat是一个Servlet容器？](docs/Tomcat/Tomcat是一个Servlet容器？.md)
 ### 数据库
