@@ -13,7 +13,7 @@ Spring官网阅读（七）容器的扩展点（二）FactoryBean
 从上面这段文字我们可以得出以下几个信息：
 
 1. `FactoryBean`主要用来定制化Bean的创建逻辑
-2. 当我们实例化一个Bean的逻辑很复杂的时候，使用`FactoryBean`是很必要的，这要可以规避我们去使用冗长的XML配置
+2. 当我们实例化一个Bean的逻辑很复杂的时候，使用`FactoryBean`是很必要的，这样可以规避我们去使用冗长的XML配置
 3. `FactoryBean`接口提供了以下三个方法：
 
 - `Object getObject()`: 返回这个`FactoryBean`所创建的对象。
