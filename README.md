@@ -33,6 +33,8 @@ Github仓库地址为 https://github.com/boomblog/ArchGuide
 ##### [（六）容器的扩展点（BeanFactoryPostProcessor）](docs/Spring/Spring官网学习笔记/Spring官网阅读（六）容器的扩展点（BeanFactoryPostProcessor）/Spring官网阅读（六）容器的扩展点（BeanFactoryPostProcessor）.md) 
 ##### [（七）容器的扩展点（FactoryBean）](docs/Spring/Spring官网学习笔记/Spring官网阅读（七）容器的扩展点（FactoryBean）/Spring官网阅读（七）容器的扩展点（FactoryBean）.md) 
 ##### [（八）容器的扩展点（BeanPostProcessor）](docs/Spring/Spring官网学习笔记/Spring官网阅读（八）容器的扩展点（BeanPostProcessor）/Spring官网阅读（八）容器的扩展点（BeanPostProcessor）.md) 
+##### [（九）Spring中Bean的生命周期（上）](docs/Spring/Spring官网学习笔记/Spring官网阅读（九）Spring中Bean的生命周期（上）/Spring官网阅读（九）Spring中Bean的生命周期（上）.md) 
+##### [（十）Spring中Bean的生命周期（下）](docs/Spring/Spring官网学习笔记/Spring官网阅读（十）Spring中Bean的生命周期（下）/Spring官网阅读（十）Spring中Bean的生命周期（下）.md) 
 ### Tomcat
 #### [Tomcat是一个Servlet容器？](docs/Tomcat/Tomcat是一个Servlet容器？.md)
 ### 数据库
@@ -45,4 +47,4 @@ Github仓库地址为 https://github.com/boomblog/ArchGuide
 #### [程序要一定要明白的架构-三地五中心（2）](docs/架构杂文/程序要一定要明白的架构-三地五中心/程序要一定要明白的架构-三地五中心（2）.md)
 ### 网络
 #### [程序员要搞明白CDN，这篇应该够了](docs/网络/程序员要搞明白CDN，这篇应该够了/程序员要搞明白CDN，这篇应该够了.md)
-
+### 鲁班学院VIP升值加薪
