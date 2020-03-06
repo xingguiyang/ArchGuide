@@ -35,6 +35,7 @@ Github仓库地址为 https://github.com/boomblog/ArchGuide
 ##### [（八）容器的扩展点（BeanPostProcessor）](docs/Spring/Spring官网学习笔记/Spring官网阅读（八）容器的扩展点（BeanPostProcessor）/Spring官网阅读（八）容器的扩展点（BeanPostProcessor）.md) 
 ##### [（九）Spring中Bean的生命周期（上）](docs/Spring/Spring官网学习笔记/Spring官网阅读（九）Spring中Bean的生命周期（上）/Spring官网阅读（九）Spring中Bean的生命周期（上）.md) 
 ##### [（十）Spring中Bean的生命周期（下）](docs/Spring/Spring官网学习笔记/Spring官网阅读（十）Spring中Bean的生命周期（下）/Spring官网阅读（十）Spring中Bean的生命周期（下）.md) 
+##### [（十一）ApplicationContext详细介绍（上）](docs/Spring/Spring官网学习笔记/Spring官网阅读（十一）ApplicationContext详解（上）/Spring官网阅读（十一）ApplicationContext详解（上）.md) 
 ### Tomcat
 #### [Tomcat是一个Servlet容器？](docs/Tomcat/Tomcat是一个Servlet容器？.md)
 ### 数据库
